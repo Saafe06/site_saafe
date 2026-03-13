@@ -4,7 +4,7 @@ import { Home, Zap, Thermometer, ShieldCheck, MapPin } from 'lucide-react';
 const gallery = [
   "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1600607687940-47a0f9259d4b?q=80&w=800&auto=format&fit=crop",
+  "https://lh3.googleusercontent.com/d/1qGNhUhOfAjSZ0UwciRh4gYcwLU7XkNYH",
   "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?q=80&w=800&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=800&auto=format&fit=crop"
@@ -17,7 +17,7 @@ export default function Construction() {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1503387762-592dee58292b?q=80&w=2000&auto=format&fit=crop" 
+            src="https://lh3.googleusercontent.com/d/1N5yOLaHToimv2TxQ12gA2osbTHAvmUHm" 
             alt="Construção de Alto Padrão" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
@@ -105,7 +105,7 @@ export default function Construction() {
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.02 }}
-                className="relative group overflow-hidden rounded-3xl aspect-video"
+                className="relative group overflow-hidden rounded-3xl aspect-square"
               >
                 <img src={img} alt={`Projeto ${i}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-saafe-blue/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
