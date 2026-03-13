@@ -275,6 +275,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-black text-saafe-blue mb-12"
+          >
+            Conheça o Sistema Monolítico em EPS
+          </motion.h2>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative w-full max-w-[800px] mx-auto aspect-video rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white"
+          >
+            <iframe 
+              className="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/2XzaOuTYYJc?si=2QYbqNOCmdM3tyI8" 
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen
+            ></iframe>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Differentials Section */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
