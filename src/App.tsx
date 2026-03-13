@@ -9,11 +9,22 @@ import Training from './pages/Training';
 import Construction from './pages/Construction';
 import Contact from './pages/Contact';
 
-function ScrollToTop() {
+function PageSetup() {
   const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Dynamic Title Logic
+    const titles: { [key: string]: string } = {
+      '/': 'SAAFE - Engenharia e Construção em EPS',
+      '/produtos': 'SAAFE - Produtos',
+      '/treinamento': 'SAAFE - Treinamento',
+      '/construcao': 'SAAFE - Construção',
+      '/contato': 'SAAFE - Contato',
+    };
+
+    document.title = titles[pathname] || 'SAAFE - Engenharia e Construção em EPS';
   }, [pathname]);
 
   return null;
@@ -22,7 +33,7 @@ function ScrollToTop() {
 export default function App() {
   return (
     <Router>
-      <ScrollToTop />
+      <PageSetup />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
