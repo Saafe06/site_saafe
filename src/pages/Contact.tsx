@@ -3,19 +3,40 @@ import { Phone, Mail, Instagram, Globe, Send, MessageCircle } from 'lucide-react
 
 export default function Contact() {
   return (
-    <div className="pt-32 pb-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-20"
-        >
-          <span className="text-saafe-green font-bold tracking-widest uppercase text-sm mb-4 block">Fale Conosco</span>
-          <h1 className="text-5xl md:text-6xl font-black text-saafe-blue mb-6">Entre em contato com a SAAFE</h1>
-          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
-            Estamos prontos para transformar seu projeto em realidade com a melhor tecnologia construtiva do mercado.
-          </p>
-        </motion.div>
+    <div className="overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" 
+            alt="Contato SAAFE" 
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-saafe-blue/60 backdrop-blur-[2px]" />
+        </div>
+
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
+          <motion.span 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-saafe-green font-bold tracking-widest uppercase text-sm mb-4 block"
+          >
+            Fale Conosco
+          </motion.span>
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl md:text-7xl font-black mb-6 leading-tight"
+          >
+            Entre em contato com a <span className="text-saafe-green">SAAFE</span>
+          </motion.h1>
+        </div>
+      </section>
+
+      <div className="py-24 max-w-7xl mx-auto px-6">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Info */}

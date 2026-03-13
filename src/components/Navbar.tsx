@@ -19,30 +19,15 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
 
-  const isHeroPage = ['/', '/produtos', '/treinamento'].includes(location.pathname);
-  const isNavbarWhite = scrolled || !isHeroPage;
-
   return (
     <nav
-      className={cn(
-        'fixed top-0 left-0 w-full z-50 transition-all duration-500',
-        isNavbarWhite ? 'bg-white shadow-md py-2' : 'bg-transparent py-3'
-      )}
+      className="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-white/70 backdrop-blur-md shadow-md py-2"
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-[70px]">
         <Link to="/" className="flex items-center group">
@@ -51,10 +36,7 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
             src="https://lh3.googleusercontent.com/d/1Ubp0U_gBr0m0p0Ff8_NFSCYwRDukgxXW" 
             alt="SAAFE Logo" 
-            className={cn(
-              "h-10 w-auto transition-all",
-              !isNavbarWhite && "brightness-0 invert"
-            )}
+            className="h-10 w-auto transition-all"
             referrerPolicy="no-referrer"
           />
         </Link>
@@ -66,11 +48,11 @@ export default function Navbar() {
               key={link.name}
               to={link.path}
               className={cn(
-                'text-[11px] font-bold tracking-widest transition-all duration-300 border border-transparent',
-                isNavbarWhite ? 'text-saafe-dark' : 'text-white',
+                'text-[11px] font-bold tracking-widest transition-all duration-300 border-b-2',
+                'text-saafe-dark',
                 location.pathname === link.path 
-                  ? 'bg-saafe-green/15 border-saafe-green text-saafe-green rounded-[20px] px-[14px] py-[6px]' 
-                  : 'hover:text-saafe-green px-[14px] py-[6px]'
+                  ? 'border-saafe-green text-saafe-green font-black' 
+                  : 'border-transparent hover:text-saafe-green'
               )}
             >
               {link.name}
@@ -78,12 +60,7 @@ export default function Navbar() {
           ))}
           <Link 
             to="/contato" 
-            className={cn(
-              "px-6 py-2 rounded-full text-[11px] font-bold tracking-widest transition-all",
-              isNavbarWhite 
-                ? "bg-saafe-green text-white hover:bg-saafe-blue" 
-                : "bg-white text-saafe-green hover:bg-saafe-gray"
-            )}
+            className="px-6 py-2 rounded-full text-[11px] font-bold tracking-widest transition-all bg-saafe-green text-white hover:bg-saafe-blue"
           >
             ORÇAMENTO
           </Link>
@@ -95,9 +72,9 @@ export default function Navbar() {
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? (
-            <X className={isNavbarWhite ? 'text-saafe-dark' : 'text-white'} size={28} />
+            <X className="text-saafe-dark" size={28} />
           ) : (
-            <Menu className={isNavbarWhite ? 'text-saafe-dark' : 'text-white'} size={28} />
+            <Menu className="text-saafe-dark" size={28} />
           )}
         </button>
       </div>

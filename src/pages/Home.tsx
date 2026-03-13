@@ -199,7 +199,7 @@ export default function Home() {
                 style={{ y: aboutImageY }}
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.6 }}
-                src="https://images.unsplash.com/photo-1503387762-592dee58c460?q=80&w=1000&auto=format&fit=crop" 
+                src="https://lh3.googleusercontent.com/d/1zPpKThAcuJqyNn5RZkUdy6T2v3bC_uyg" 
                 alt="Arquitetura Moderna" 
                 className="w-full h-full object-cover scale-110"
                 referrerPolicy="no-referrer"
@@ -340,7 +340,7 @@ export default function Home() {
                 <motion.img 
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 1 }}
-                  src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1000&auto=format&fit=crop" 
+                  src="https://lh3.googleusercontent.com/d/1sRZgHYH_avuPum0MJ_0weLYkNF3DfS7_" 
                   alt="Painel EPS Técnico" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"

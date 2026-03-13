@@ -12,23 +12,40 @@ const gallery = [
 
 export default function Construction() {
   return (
-    <div className="pt-48 pb-32">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-32"
-        >
-          <span className="text-saafe-green font-bold tracking-[0.3em] uppercase text-xs mb-6 block">Execução de Obras</span>
-          <h1 className="text-5xl md:text-8xl font-black text-saafe-blue mb-8 tracking-tighter">Construção de <span className="text-saafe-green">Alto Padrão</span></h1>
-          <p className="text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-light">
-            Atuamos como construtora especializada em obras executadas com painéis monolíticos em EPS, unindo engenharia avançada e arquitetura moderna.
-          </p>
-        </motion.div>
+    <div className="overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1503387762-592dee58292b?q=80&w=2000&auto=format&fit=crop" 
+            alt="Construção de Alto Padrão" 
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-saafe-blue/60 backdrop-blur-[2px]" />
+        </div>
 
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
+          <motion.span 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-saafe-green font-bold tracking-[0.3em] uppercase text-xs mb-6 block"
+          >
+            Execução de Obras
+          </motion.span>
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl md:text-7xl font-black mb-6 leading-tight"
+          >
+            Construção de <span className="text-saafe-green">Alto Padrão</span>
+          </motion.h1>
+        </div>
+      </section>
+
+      <div className="py-24 max-w-7xl mx-auto px-6">
         {/* Main Info */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-40 items-center">
           <motion.div
