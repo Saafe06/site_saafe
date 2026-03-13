@@ -8,7 +8,7 @@ export default function Contact() {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" 
+            src="https://lh3.googleusercontent.com/d/1rFXecMdOdSAq3nRxrNjsqS7xNVyQN5l4" 
             alt="Contato SAAFE" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"

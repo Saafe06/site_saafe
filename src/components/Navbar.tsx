@@ -27,16 +27,16 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-white/70 backdrop-blur-md shadow-md py-2"
+      className="fixed top-0 left-0 w-full z-50 transition-all duration-500 !bg-white/40 backdrop-blur-[15px] border-b border-white/20 shadow-sm"
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-[70px]">
+      <div className="max-w-5xl mx-auto px-6 flex justify-between items-center py-3">
         <Link to="/" className="flex items-center group">
           <motion.img 
             whileHover={{ scale: 1.05, rotate: -2 }}
             whileTap={{ scale: 0.95 }}
             src="https://lh3.googleusercontent.com/d/1Ubp0U_gBr0m0p0Ff8_NFSCYwRDukgxXW" 
             alt="SAAFE Logo" 
-            className="h-10 w-auto transition-all"
+            className="h-14 w-auto transition-all"
             referrerPolicy="no-referrer"
           />
         </Link>
