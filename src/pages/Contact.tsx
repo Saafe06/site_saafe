@@ -13,7 +13,7 @@ export default function Contact() {
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-saafe-blue/60 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-saafe-blue/42 backdrop-blur-[2px]" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
