@@ -12,35 +12,32 @@ export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
     setErrorMessage('');
 
-    try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-          'form-name': 'contato-saafe',
-          ...formData
-        }).toString(),
-      });
+    const form = e.currentTarget as HTMLFormElement;
+    const data = new FormData(form);
 
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', phone: '', message: '' });
-      } else {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data as any).toString(),
+    })
+      .then((response) => {
+        if (response.ok) {
+          setStatus('success');
+          setFormData({ name: '', email: '', phone: '', message: '' });
+        } else {
+          throw new Error();
+        }
+      })
+      .catch((error) => {
+        console.error('Erro ao enviar formulário:', error);
         setStatus('error');
-        setErrorMessage('Ocorreu um erro ao enviar sua mensagem.');
-      }
-    } catch (error) {
-      console.error('Erro ao enviar formulário:', error);
-      setStatus('error');
-      setErrorMessage('Erro de conexão. Verifique sua internet e tente novamente.');
-    }
+        setErrorMessage('Ocorreu um erro ao enviar sua mensagem. Tente novamente.');
+      });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
