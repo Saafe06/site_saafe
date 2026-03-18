@@ -18,12 +18,21 @@ export default function Contact() {
     setErrorMessage('');
 
     const form = e.currentTarget as HTMLFormElement;
-    const data = new FormData(form);
+    const formData = new FormData(form);
+    const searchParams = new URLSearchParams();
+    
+    // Isso garante que o Netlify saiba qual formulário está recebendo
+    searchParams.append('form-name', 'contato-saafe');
+    
+    // Isso adiciona os campos do usuário
+    formData.forEach((value, key) => {
+      searchParams.append(key, value.toString());
+    });
 
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(data as any).toString(),
+      body: searchParams.toString(),
     })
       .then((response) => {
         if (response.ok) {
