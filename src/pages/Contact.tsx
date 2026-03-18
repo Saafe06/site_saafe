@@ -3,56 +3,7 @@ import { Phone, Mail, Instagram, Globe, Send, MessageCircle, CheckCircle2, Alert
 import React, { useState } from 'react';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('loading');
-    setErrorMessage('');
-
-    const form = e.currentTarget as HTMLFormElement;
-    const formData = new FormData(form);
-    const searchParams = new URLSearchParams();
-    
-    // Isso garante que o Netlify saiba qual formulário está recebendo
-    searchParams.append('form-name', 'contato-saafe');
-    
-    // Isso adiciona os campos do usuário
-    formData.forEach((value, key) => {
-      searchParams.append(key, value.toString());
-    });
-
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: searchParams.toString(),
-    })
-      .then((response) => {
-        if (response.ok) {
-          setStatus('success');
-          setFormData({ name: '', email: '', phone: '', message: '' });
-        } else {
-          throw new Error();
-        }
-      })
-      .catch((error) => {
-        console.error('Erro ao enviar formulário:', error);
-        setStatus('error');
-        setErrorMessage('Ocorreu um erro ao enviar sua mensagem. Tente novamente.');
-      });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const mailtoLink = "mailto:contato@saafe.com.br?subject=Solicitação de Orçamento / Informações - SAAFE&body=Olá equipe SAAFE, gostaria de solicitar um orçamento para meu projeto.";
 
   return (
     <div className="overflow-hidden">
@@ -156,107 +107,40 @@ export default function Contact() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white p-8 md:p-12 rounded-[3rem] shadow-2xl border border-gray-100"
+            className="bg-white p-8 md:p-12 rounded-[3rem] shadow-2xl border border-gray-100 flex flex-col justify-center"
           >
-            {status === 'success' ? (
-              <div className="text-center py-12 space-y-6">
-                <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto">
-                  <CheckCircle2 size={48} />
-                </div>
-                <h3 className="text-3xl font-black text-saafe-blue">Mensagem Enviada!</h3>
-                <p className="text-gray-500">Obrigado pelo contato. Nossa equipe retornará em breve para o e-mail informado.</p>
-                <button 
-                  onClick={() => setStatus('idle')}
-                  className="btn-primary"
-                >
-                  ENVIAR OUTRA MENSAGEM
-                </button>
+            <div className="text-center space-y-8">
+              <div className="w-20 h-20 bg-saafe-gray text-saafe-green rounded-full flex items-center justify-center mx-auto">
+                <Mail size={40} />
               </div>
-            ) : (
-              <form 
-                className="space-y-6" 
-                onSubmit={handleSubmit}
-                name="contato-saafe"
-                method="POST"
-                data-netlify="true"
-              >
-                <input type="hidden" name="form-name" value="contato-saafe" />
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-saafe-blue uppercase tracking-widest">Nome</label>
-                    <input 
-                      type="text" 
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-6 py-4 bg-saafe-gray rounded-xl border-none focus:ring-2 focus:ring-saafe-green transition-all" 
-                      placeholder="Seu nome completo" 
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-saafe-blue uppercase tracking-widest">E-mail</label>
-                    <input 
-                      type="email" 
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-6 py-4 bg-saafe-gray rounded-xl border-none focus:ring-2 focus:ring-saafe-green transition-all" 
-                      placeholder="seu@email.com" 
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-saafe-blue uppercase tracking-widest">Telefone</label>
-                  <input 
-                    type="tel" 
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-6 py-4 bg-saafe-gray rounded-xl border-none focus:ring-2 focus:ring-saafe-green transition-all" 
-                    placeholder="(00) 00000-0000" 
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-saafe-blue uppercase tracking-widest">Mensagem</label>
-                  <textarea 
-                    name="message"
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={5} 
-                    className="w-full px-6 py-4 bg-saafe-gray rounded-xl border-none focus:ring-2 focus:ring-saafe-green transition-all resize-none" 
-                    placeholder="Como podemos ajudar no seu projeto?"
-                  ></textarea>
-                </div>
+              
+              <div className="space-y-4">
+                <h3 className="text-3xl font-black text-saafe-blue">Solicite seu Orçamento</h3>
+                <p className="text-gray-500 text-lg">
+                  Clique no botão abaixo para nos enviar um e-mail com os detalhes do seu projeto. 
+                  Nossa equipe técnica entrará em contato o mais breve possível.
+                </p>
+              </div>
 
-                {status === 'error' && (
-                  <div className="flex items-center gap-2 text-red-600 bg-red-50 p-4 rounded-xl">
-                    <AlertCircle size={20} />
-                    <p className="text-sm font-medium">{errorMessage}</p>
-                  </div>
-                )}
-
-                <button 
-                  type="submit" 
-                  disabled={status === 'loading'}
-                  className="btn-primary w-full flex items-center justify-center gap-2 py-5 text-lg disabled:opacity-70 disabled:cursor-not-allowed"
+              <div className="space-y-4">
+                <a 
+                  href={mailtoLink}
+                  className="btn-primary w-full flex items-center justify-center gap-3 py-6 text-xl shadow-lg shadow-saafe-green/20"
                 >
-                  {status === 'loading' ? 'ENVIANDO...' : 'ENVIAR MENSAGEM'} <Send size={20} />
-                </button>
+                  SOLICITAR ORÇAMENTO VIA E-MAIL <Send size={24} />
+                </a>
                 
                 <div className="relative flex items-center py-4">
                   <div className="flex-grow border-t border-gray-200"></div>
-                  <span className="flex-shrink mx-4 text-gray-400 text-sm font-bold uppercase tracking-widest">Ou</span>
+                  <span className="flex-shrink mx-4 text-gray-400 text-sm font-bold uppercase tracking-widest">Ou se preferir</span>
                   <div className="flex-grow border-t border-gray-200"></div>
                 </div>
                 
-                <a href="https://wa.me/5561999638967" className="btn-secondary w-full flex items-center justify-center gap-2 py-5 text-lg">
-                  FALAR NO WHATSAPP <MessageCircle size={20} />
+                <a href="https://wa.me/5561999638967" className="btn-secondary w-full flex items-center justify-center gap-3 py-6 text-xl">
+                  FALAR NO WHATSAPP <MessageCircle size={24} />
                 </a>
-              </form>
-            )}
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
