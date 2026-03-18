@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Phone, Mail, Instagram, Globe, Send, MessageCircle, CheckCircle2, AlertCircle } from 'lucide-react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -18,22 +18,23 @@ export default function Contact() {
     setErrorMessage('');
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify(formData),
+        body: new URLSearchParams({
+          'form-name': 'contato-saafe',
+          ...formData
+        }).toString(),
       });
-
-      const data = await response.json();
 
       if (response.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', phone: '', message: '' });
       } else {
         setStatus('error');
-        setErrorMessage(data.error || 'Ocorreu um erro ao enviar sua mensagem.');
+        setErrorMessage('Ocorreu um erro ao enviar sua mensagem.');
       }
     } catch (error) {
       console.error('Erro ao enviar formulário:', error);
@@ -166,7 +167,14 @@ export default function Contact() {
                 </button>
               </div>
             ) : (
-              <form className="space-y-6" onSubmit={handleSubmit}>
+              <form 
+                className="space-y-6" 
+                onSubmit={handleSubmit}
+                name="contato-saafe"
+                method="POST"
+                data-netlify="true"
+              >
+                <input type="hidden" name="form-name" value="contato-saafe" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-saafe-blue uppercase tracking-widest">Nome</label>
