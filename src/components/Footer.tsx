@@ -22,7 +22,7 @@ export default function Footer() {
             <a href="https://instagram.com/saafe_concreto_armado_thermo" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-saafe-green transition-colors">
               <Instagram size={20} />
             </a>
-            <a href="mailto:saafe.bsb@gmail.com" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-saafe-green transition-colors">
+            <a href="mailto:contato@saafe.com.br" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-saafe-green transition-colors">
               <Mail size={20} />
             </a>
           </div>
@@ -50,7 +50,7 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-3">
               <Mail size={18} className="text-saafe-green shrink-0 mt-1" />
-              <span className="text-white/70">saafe.bsb@gmail.com</span>
+              <span className="text-white/70">contato@saafe.com.br</span>
             </li>
             <li className="flex items-start gap-3">
               <MapPin size={18} className="text-saafe-green shrink-0 mt-1" />
