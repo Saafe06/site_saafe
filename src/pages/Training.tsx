@@ -32,7 +32,7 @@ export default function Training() {
   const heroOpacity = useTransform(heroScroll, [0, 0.5], [1, 0]);
 
   return (
-    <div className="overflow-hidden bg-black">
+    <div className="overflow-hidden bg-white">
       {/* HERO SECTION */}
       <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
         <motion.div style={{ y: heroY }} className="absolute inset-0 z-0">
@@ -80,7 +80,7 @@ export default function Training() {
       </section>
 
       {/* SOBRE A CONSULTORIA SAAFE */}
-      <section className="py-32 section-gradient relative">
+      <section className="py-32 bg-white relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div
@@ -90,8 +90,8 @@ export default function Training() {
               transition={{ duration: 1 }}
             >
               <span className="text-saafe-green font-bold tracking-widest uppercase text-xs mb-6 block">Institucional</span>
-              <h2 className="text-4xl md:text-5xl font-black mb-10 text-white leading-tight">Sobre a Consultoria SAAFE</h2>
-              <div className="space-y-6 text-white/70 text-lg leading-relaxed mb-12">
+              <h2 className="text-4xl md:text-5xl font-black mb-10 text-saafe-blue leading-tight">Sobre a Consultoria SAAFE</h2>
+              <div className="space-y-6 text-gray-600 text-lg leading-relaxed mb-12">
                 <p>
                   A SAAFE atua exclusivamente com sistema construtivo monolítico em EPS, tendo iniciado suas atividades ainda na fase das placas manufaturadas e evoluído junto com a tecnologia no Brasil.
                 </p>
@@ -104,18 +104,18 @@ export default function Training() {
               </div>
               
               <div className="flex flex-wrap gap-6">
-                <div className="flex items-center gap-3 bg-white/5 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/10">
+                <div className="flex items-center gap-3 bg-saafe-gray px-6 py-4 rounded-2xl border border-gray-100">
                   <Globe className="text-saafe-green" size={24} />
                   <div>
-                    <span className="text-xs uppercase font-black text-white/40 block">Atuação</span>
-                    <span className="font-black text-white">MG, SP e DF</span>
+                    <span className="text-xs uppercase font-bold text-gray-400 block">Atuação</span>
+                    <span className="font-bold text-saafe-blue">MG, SP e DF</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 bg-white/5 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/10">
+                <div className="flex items-center gap-3 bg-saafe-gray px-6 py-4 rounded-2xl border border-gray-100">
                   <Building2 className="text-saafe-green" size={24} />
                   <div>
-                    <span className="text-xs uppercase font-black text-white/40 block">Experiência</span>
-                    <span className="font-black text-white">Obras Realizadas</span>
+                    <span className="text-xs uppercase font-bold text-gray-400 block">Experiência</span>
+                    <span className="font-bold text-saafe-blue">Obras Realizadas</span>
                   </div>
                 </div>
               </div>
@@ -144,13 +144,13 @@ export default function Training() {
       </section>
 
       {/* FOCO DA CONSULTORIA */}
-      <section className="py-32 bg-black">
+      <section className="py-32 bg-saafe-gray">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Foco da Consultoria</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-saafe-blue mb-6">Foco da Consultoria</h2>
             <div className="w-24 h-1.5 bg-saafe-green mx-auto rounded-full" />
           </div>
- 
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -171,42 +171,43 @@ export default function Training() {
             ].map((card, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.2 }}
-                className="glass-card p-10 rounded-[2.5rem] transition-all duration-500 group"
+                className="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 group"
               >
-                <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-saafe-green mb-8 group-hover:bg-saafe-green group-hover:text-white transition-colors duration-500">
+                <div className="w-16 h-16 bg-saafe-gray rounded-2xl flex items-center justify-center text-saafe-green mb-8 group-hover:bg-saafe-green group-hover:text-white transition-colors duration-500">
                   {card.icon}
                 </div>
-                <h3 className="text-2xl font-black text-white mb-4">{card.title}</h3>
-                <p className="text-white/60 leading-relaxed">{card.desc}</p>
+                <h3 className="text-2xl font-bold text-saafe-blue mb-4">{card.title}</h3>
+                <p className="text-gray-500 leading-relaxed">{card.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
+
       {/* FORMAÇÃO DE MÃO DE OBRA */}
-      <section className="py-32 section-gradient">
+      <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="order-2 lg:order-1"
             >
-              <div className="relative rounded-[3rem] overflow-hidden glass-card aspect-[4/3] lg:aspect-square p-4">
+              <div className="relative rounded-[3rem] overflow-hidden shadow-2xl bg-gray-100 aspect-[4/3] lg:aspect-square">
                 <img 
                   src="https://lh3.googleusercontent.com/d/1f6kjHZyFFp6LwnEoA0ImI8fz9uJ9rCv4" 
                   alt="Treinamento Prático" 
-                  className="w-full h-full object-cover rounded-[2rem]"
+                  className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
               </div>
             </motion.div>
- 
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -214,8 +215,8 @@ export default function Training() {
               className="order-1 lg:order-2"
             >
               <span className="text-saafe-green font-bold tracking-widest uppercase text-xs mb-6 block">Capacitação Técnica</span>
-              <h2 className="text-4xl md:text-5xl font-black mb-10 text-white leading-tight">Formação de Mão de Obra</h2>
-              <div className="space-y-6 text-white/70 text-lg leading-relaxed">
+              <h2 className="text-4xl md:text-5xl font-black mb-10 text-saafe-blue leading-tight">Formação de Mão de Obra</h2>
+              <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                 <p>
                   Devido à escassez de profissionais especializados nesse sistema construtivo no Brasil, a SAAFE também atua na formação de mão de obra técnica.
                 </p>
@@ -232,13 +233,13 @@ export default function Training() {
       </section>
 
       {/* MATERIAL DIDÁTICO */}
-      <section className="py-32 bg-black relative overflow-hidden">
+      <section className="py-32 bg-saafe-blue relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass-card p-12 md:p-20 rounded-[4rem]"
+            className="p-12 md:p-20 rounded-[4rem]"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
@@ -261,62 +262,62 @@ export default function Training() {
       </section>
 
       {/* PARTICIPANTES RECOMENDADOS */}
-      <section className="py-32 section-gradient">
+      <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <span className="text-saafe-green font-bold tracking-widest uppercase text-xs mb-6 block">Público-Alvo</span>
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-8">Participantes Recomendados</h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-black text-saafe-blue mb-8">Participantes Recomendados</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               Para melhor aproveitamento da consultoria recomenda-se a participação de profissionais-chave da obra.
             </p>
           </div>
- 
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex items-center gap-8 p-10 glass-card rounded-[3rem]"
+              className="flex items-center gap-8 p-10 bg-saafe-gray rounded-[3rem] border border-gray-100"
             >
-              <div className="w-24 h-24 bg-white/10 rounded-full flex items-center justify-center text-saafe-green shadow-lg shrink-0">
+              <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center text-saafe-blue shadow-lg shrink-0">
                 <HardHat size={48} />
               </div>
               <div>
-                <h3 className="text-2xl font-black text-white mb-2">1 Mestre de Obras</h3>
-                <p className="text-white/60">Liderança técnica e gestão de equipe.</p>
+                <h3 className="text-2xl font-black text-saafe-blue mb-2">1 Mestre de Obras</h3>
+                <p className="text-gray-500">Liderança técnica e gestão de equipe.</p>
               </div>
             </motion.div>
- 
+
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex items-center gap-8 p-10 glass-card rounded-[3rem]"
+              className="flex items-center gap-8 p-10 bg-saafe-gray rounded-[3rem] border border-gray-100"
             >
-              <div className="w-24 h-24 bg-white/10 rounded-full flex items-center justify-center text-saafe-green shadow-lg shrink-0">
+              <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center text-saafe-blue shadow-lg shrink-0">
                 <Hammer size={48} />
               </div>
               <div>
-                <h3 className="text-2xl font-black text-white mb-2">2 Pedreiros</h3>
-                <p className="text-white/60">Execução prática e aplicação do sistema.</p>
+                <h3 className="text-2xl font-black text-saafe-blue mb-2">2 Pedreiros</h3>
+                <p className="text-gray-500">Execução prática e aplicação do sistema.</p>
               </div>
             </motion.div>
           </div>
- 
-          <p className="text-center mt-16 text-white/40 max-w-2xl mx-auto italic">
+
+          <p className="text-center mt-16 text-gray-400 max-w-2xl mx-auto italic">
             Esses profissionais participam das etapas teóricas e práticas, aprendendo normas, padrões e técnicas do sistema construtivo monolítico.
           </p>
         </div>
       </section>
 
       {/* CONTEÚDO DO CURSO */}
-      <section className="py-32 bg-black">
+      <section className="py-32 bg-saafe-gray">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Conteúdo do Curso</h2>
-            <p className="text-white/60 text-lg">Abordagem técnica completa para domínio total do sistema.</p>
+            <h2 className="text-4xl md:text-5xl font-black text-saafe-blue mb-6">Conteúdo do Curso</h2>
+            <p className="text-gray-500 text-lg">Abordagem técnica completa para domínio total do sistema.</p>
           </div>
- 
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               "Propriedades dos materiais",
@@ -338,12 +339,12 @@ export default function Training() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="glass-card p-6 rounded-2xl flex items-center gap-4 transition-all"
+                className="bg-white p-6 rounded-2xl flex items-center gap-4 shadow-sm hover:shadow-md transition-all border border-gray-100"
               >
                 <div className="w-10 h-10 bg-saafe-green/10 rounded-lg flex items-center justify-center text-saafe-green shrink-0">
                   <CheckCircle2 size={20} />
                 </div>
-                <span className="font-black text-white">{item}</span>
+                <span className="font-bold text-saafe-blue">{item}</span>
               </motion.div>
             ))}
           </div>
@@ -351,19 +352,19 @@ export default function Training() {
       </section>
 
       {/* ESCOPO DA ASSESSORIA TÉCNICA */}
-      <section className="py-32 section-gradient">
+      <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <span className="text-saafe-green font-bold tracking-widest uppercase text-xs mb-6 block">Premium Service</span>
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Escopo da Assessoria Técnica</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-saafe-blue mb-6">Escopo da Assessoria Técnica</h2>
           </div>
- 
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass-card p-12 md:p-16 rounded-[4rem] text-white"
+              className="bg-saafe-blue p-12 md:p-16 rounded-[4rem] text-white"
             >
               <h3 className="text-3xl font-black mb-10">A consultoria técnica da SAAFE inclui:</h3>
               <ul className="space-y-6">
@@ -380,12 +381,12 @@ export default function Training() {
                 ))}
               </ul>
             </motion.div>
- 
+
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-md p-12 md:p-16 rounded-[4rem] border border-white/10"
+              className="bg-saafe-gray p-12 md:p-16 rounded-[4rem] border border-gray-100"
             >
               <ul className="space-y-6 mt-12">
                 {[
@@ -395,7 +396,7 @@ export default function Training() {
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-4">
                     <div className="mt-1 text-saafe-green">{item.icon}</div>
-                    <span className="text-lg text-white/80">{item.text}</span>
+                    <span className="text-lg text-saafe-blue/80">{item.text}</span>
                   </li>
                 ))}
               </ul>
@@ -405,20 +406,20 @@ export default function Training() {
       </section>
 
       {/* IMPORTANTE */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-saafe-gray">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="glass-card p-10 rounded-[3rem] flex flex-col md:flex-row items-center gap-8"
+            className="bg-white p-10 rounded-[3rem] flex flex-col md:flex-row items-center gap-8 shadow-sm border border-gray-100"
           >
             <div className="w-20 h-20 bg-saafe-green rounded-full flex items-center justify-center text-white shrink-0 shadow-lg shadow-saafe-green/20">
               <ShieldCheck size={40} />
             </div>
             <div>
-              <h3 className="text-2xl font-black text-white mb-4">Importante</h3>
-              <p className="text-white/60 leading-relaxed">
+              <h3 className="text-2xl font-black text-saafe-blue mb-4">Importante</h3>
+              <p className="text-gray-600 leading-relaxed">
                 Para o correto desenvolvimento da obra, é necessário o acompanhamento do engenheiro responsável técnico durante as etapas de execução. A SAAFE fornece orientação técnica especializada e boas práticas de implantação do sistema construtivo.
               </p>
             </div>
@@ -427,20 +428,10 @@ export default function Training() {
       </section>
 
       {/* CALL TO ACTION */}
-      <section className="py-32 bg-black relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img 
-            src="https://images.unsplash.com/photo-1503387762-592dee58c460?q=80&w=2000&auto=format&fit=crop" 
-            alt="Obra Finalizada" 
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
-        </div>
-        <div className="absolute inset-0 bg-saafe-blue/70" />
- 
+      <section className="py-32 bg-saafe-blue relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.h2 
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-black text-white mb-8 leading-tight"
@@ -448,7 +439,7 @@ export default function Training() {
             Construa com quem entende do sistema monolítico
           </motion.h2>
           <motion.p 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
@@ -458,7 +449,7 @@ export default function Training() {
           </motion.p>
           
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
