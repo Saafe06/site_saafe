@@ -144,7 +144,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section ref={aboutRef} className="py-32 section-gradient relative">
+      <section ref={aboutRef} className="py-32 bg-white relative">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, x: -100 }}
@@ -153,8 +153,8 @@ export default function Home() {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <span className="text-saafe-green font-bold tracking-[0.3em] uppercase text-xs mb-6 block">Sobre a Empresa</span>
-            <h2 className="text-4xl md:text-6xl font-black mb-10 text-white leading-none">O que é a SAAFE</h2>
-            <div className="space-y-8 text-white/80 leading-relaxed text-xl">
+            <h2 className="text-4xl md:text-6xl font-black mb-10 text-saafe-blue leading-none">O que é a SAAFE</h2>
+            <div className="space-y-8 text-gray-600 leading-relaxed text-xl">
               <p>
                 A SAAFE atua há mais de 8 anos na construção civil, especializada no sistema construtivo monolítico com painéis de EPS.
               </p>
@@ -176,10 +176,10 @@ export default function Home() {
                   transition={{ delay: 0.5 + i * 0.1 }}
                   className="flex items-center gap-4 group cursor-default"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-saafe-green font-black text-lg group-hover:bg-saafe-green group-hover:text-white transition-all duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-saafe-gray flex items-center justify-center text-saafe-green font-black text-lg group-hover:bg-saafe-green group-hover:text-white transition-all duration-300">
                     {state}
                   </div>
-                  <span className="font-bold text-white text-lg">
+                  <span className="font-bold text-saafe-blue text-lg">
                     {state === "MG" ? "Minas Gerais" : state === "SP" ? "São Paulo" : "Distrito Federal"}
                   </span>
                 </motion.div>
@@ -220,12 +220,12 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-32 bg-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-[0.05] pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:40px_40px]" />
+      <section className="py-32 bg-saafe-gray border-y border-gray-200 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:40px_40px]" />
         </div>
         
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-white">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-24">
             <motion.span 
               initial={{ opacity: 0, y: 20 }}
@@ -240,7 +240,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-black text-white"
+              className="text-4xl md:text-6xl font-black text-saafe-blue"
             >
               Experiência que gera resultados
             </motion.h2>
@@ -260,15 +260,15 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 whileHover={{ y: -15, scale: 1.02 }}
-                className="glass-card p-10 rounded-[2.5rem] flex flex-col items-center text-center group transition-all duration-500"
+                className="bg-white p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-white flex flex-col items-center text-center group transition-all duration-500"
               >
-                <div className="w-20 h-20 bg-white/10 rounded-3xl flex items-center justify-center text-saafe-green mb-8 group-hover:bg-saafe-green group-hover:text-white group-hover:rotate-[10deg] transition-all duration-500">
+                <div className="w-20 h-20 bg-saafe-gray rounded-3xl flex items-center justify-center text-saafe-green mb-8 group-hover:bg-saafe-green group-hover:text-white group-hover:rotate-[10deg] transition-all duration-500">
                   {stat.icon}
                 </div>
-                <div className="text-6xl font-black text-white mb-4 tracking-tighter">
+                <div className="text-6xl font-black text-saafe-blue mb-4 tracking-tighter">
                   <Counter value={stat.value} suffix={stat.suffix} />
                 </div>
-                <p className="text-white/60 font-bold uppercase tracking-widest text-[10px] leading-relaxed">{stat.label}</p>
+                <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px] leading-relaxed">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -307,7 +307,7 @@ export default function Home() {
       </section>
 
       {/* Differentials Section */}
-      <section className="py-32 section-gradient">
+      <section className="py-32 bg-saafe-gray">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-24">
             <motion.span 
@@ -323,7 +323,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-black text-white"
+              className="text-4xl md:text-6xl font-black text-saafe-blue"
             >
               Diferenciais do Sistema
             </motion.h2>
@@ -337,14 +337,14 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -10, boxShadow: "0 30px 60px -12px rgba(0,0,0,0.3)" }}
-                className="glass-card p-12 rounded-[3rem] transition-all duration-500 group"
+                whileHover={{ y: -10, boxShadow: "0 30px 60px -12px rgba(0,0,0,0.1)" }}
+                className="bg-white p-12 rounded-[3rem] transition-all duration-500 border border-transparent hover:border-saafe-green/20 group"
               >
-                <div className="mb-8 bg-white/10 w-20 h-20 rounded-3xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-500">
+                <div className="mb-8 bg-white w-20 h-20 rounded-3xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-500">
                   {item.icon}
                 </div>
-                <h3 className="text-2xl font-black mb-5 text-white leading-tight">{item.title}</h3>
-                <p className="text-white/60 leading-relaxed text-lg">{item.description}</p>
+                <h3 className="text-2xl font-black mb-5 text-saafe-blue leading-tight">{item.title}</h3>
+                <p className="text-gray-500 leading-relaxed text-lg">{item.description}</p>
               </motion.div>
             ))}
           </div>
