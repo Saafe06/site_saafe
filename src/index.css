@@ -15,7 +15,7 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-bold tracking-tight;
+    @apply font-sans font-black tracking-tight;
   }
 }
 
@@ -31,6 +31,14 @@
   .btn-outline {
     @apply px-8 py-3 border-2 border-saafe-green text-saafe-green rounded-full font-semibold transition-all hover:bg-saafe-green hover:text-white active:scale-95;
   }
+
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+
+  .section-gradient {
+    @apply bg-gradient-to-b from-saafe-blue to-black text-white;
+  }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');

@@ -49,8 +49,8 @@ export default function Construction() {
         {/* Main Info */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-40 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
@@ -76,7 +76,7 @@ export default function Construction() {
                   <div className="text-saafe-green mb-6 bg-white w-12 h-12 rounded-xl flex items-center justify-center shadow-sm group-hover:bg-saafe-green group-hover:text-white transition-all duration-500">
                     {item.icon}
                   </div>
-                  <h3 className="font-bold text-saafe-blue mb-3 text-lg">{item.title}</h3>
+                  <h3 className="font-black text-saafe-blue mb-3 text-lg">{item.title}</h3>
                   <p className="text-sm text-gray-500 font-light leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
@@ -117,7 +117,12 @@ export default function Construction() {
         </section>
 
         {/* Area of Operation */}
-        <section className="bg-saafe-blue rounded-[3rem] p-12 md:p-20 text-white text-center overflow-hidden relative">
+        <motion.section 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="section-gradient rounded-[3rem] p-12 md:p-20 text-white text-center overflow-hidden relative"
+        >
           <div className="absolute inset-0 opacity-10 pointer-events-none">
             <svg viewBox="0 0 1000 1000" className="w-full h-full fill-current">
               <path d="M300,200 Q500,100 700,200 T900,400 T700,600 T300,500 T100,300 Z" />
@@ -126,26 +131,27 @@ export default function Construction() {
           
           <h2 className="text-4xl font-black mb-12 relative z-10">Área de Atuação</h2>
           <div className="flex flex-col md:flex-row justify-center gap-12 relative z-10">
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-20 h-20 bg-saafe-green rounded-full flex items-center justify-center shadow-lg">
-                <MapPin size={32} />
-              </div>
-              <span className="text-2xl font-bold">Distrito Federal</span>
-            </div>
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-20 h-20 bg-saafe-green rounded-full flex items-center justify-center shadow-lg">
-                <MapPin size={32} />
-              </div>
-              <span className="text-2xl font-bold">São Paulo</span>
-            </div>
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-20 h-20 bg-saafe-green rounded-full flex items-center justify-center shadow-lg">
-                <MapPin size={32} />
-              </div>
-              <span className="text-2xl font-bold">Minas Gerais</span>
-            </div>
+            {[
+              { state: "Distrito Federal" },
+              { state: "São Paulo" },
+              { state: "Minas Gerais" }
+            ].map((item, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2 }}
+                className="flex flex-col items-center gap-4"
+              >
+                <div className="w-20 h-20 bg-saafe-green rounded-full flex items-center justify-center shadow-lg">
+                  <MapPin size={32} />
+                </div>
+                <span className="text-2xl font-black">{item.state}</span>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </motion.section>
       </div>
     </div>
   );

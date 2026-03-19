@@ -48,18 +48,18 @@ export default function Products() {
       </section>
 
       {/* SECTION 2 — COMO É A PLACA SAAFE */}
-      <section className="py-24 bg-white">
+      <section className="py-24 section-gradient">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* LEFT SIDE: Technical Diagram */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="bg-saafe-gray rounded-[3rem] p-8 md:p-12 shadow-xl border border-gray-100">
+              <div className="glass-card rounded-[3rem] p-8 md:p-12">
                 <img 
                   src="https://lh3.googleusercontent.com/d/1I7ragaHsFyfziv4U5awhz9_sUh_MANOo" 
                   alt="Diagrama Técnico Placa SAAFE" 
@@ -68,10 +68,10 @@ export default function Products() {
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-saafe-green text-white p-6 rounded-2xl shadow-xl hidden md:block">
-                <span className="text-sm font-bold uppercase tracking-widest">Tecnologia Monolítica</span>
+                <span className="text-sm font-black uppercase tracking-widest">Tecnologia Monolítica</span>
               </div>
             </motion.div>
-
+ 
             {/* RIGHT SIDE: Composition & Benefits */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -80,9 +80,9 @@ export default function Products() {
               transition={{ duration: 0.8 }}
             >
               <span className="text-saafe-green font-bold tracking-widest uppercase text-sm mb-4 block">Detalhes Técnicos</span>
-              <h2 className="text-4xl md:text-5xl font-black mb-8 text-saafe-blue">Composição da Placa Estrutural</h2>
+              <h2 className="text-4xl md:text-5xl font-black mb-8 text-white">Composição da Placa Estrutural</h2>
               
-              <div className="space-y-6 text-gray-600 leading-relaxed text-lg mb-10">
+              <div className="space-y-6 text-white/70 leading-relaxed text-lg mb-10">
                 <p>A placa estrutural do sistema SAAFE é composta por:</p>
                 <ul className="space-y-3">
                   {[
@@ -93,7 +93,7 @@ export default function Products() {
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <CheckCircle2 className="text-saafe-green" size={20} />
-                      <span className="font-medium text-saafe-blue">{item}</span>
+                      <span className="font-black text-white">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -101,9 +101,9 @@ export default function Products() {
                   Após a montagem das placas, é aplicado concreto projetado, formando uma estrutura monolítica extremamente resistente.
                 </p>
               </div>
-
-              <div className="bg-saafe-blue/5 p-8 rounded-3xl border-l-4 border-saafe-green">
-                <h3 className="text-xl font-bold text-saafe-blue mb-4">Esta tecnologia proporciona:</h3>
+ 
+              <div className="bg-white/5 p-8 rounded-3xl border-l-4 border-saafe-green backdrop-blur-sm">
+                <h3 className="text-xl font-black text-white mb-4">Esta tecnologia proporciona:</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
                     { icon: <ShieldCheck size={18} />, text: "Alta resistência estrutural" },
@@ -111,7 +111,7 @@ export default function Products() {
                     { icon: <Volume2 size={18} />, text: "Isolamento acústico superior" },
                     { icon: <Clock size={18} />, text: "Redução de tempo de obra" }
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 text-saafe-blue/80 text-sm font-bold">
+                    <div key={i} className="flex items-center gap-2 text-white/80 text-sm font-black">
                       <div className="text-saafe-green">{item.icon}</div>
                       {item.text}
                     </div>
@@ -154,13 +154,13 @@ export default function Products() {
       </section>
 
       {/* SECTION 4 — BENEFÍCIOS DO SISTEMA */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-saafe-green font-bold tracking-widest uppercase text-sm mb-4 block">Vantagens</span>
-            <h2 className="text-4xl md:text-5xl font-black text-saafe-blue">Benefícios do Sistema</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-white">Benefícios do Sistema</h2>
           </div>
-
+ 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
@@ -196,18 +196,18 @@ export default function Products() {
             ].map((benefit, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={{ y: -10 }}
-                className="bg-saafe-gray p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all border border-gray-100 group"
+                whileHover={{ y: -10, boxShadow: "0 30px 60px -12px rgba(0,0,0,0.3)" }}
+                className="glass-card p-10 rounded-[2.5rem] transition-all group"
               >
-                <div className="mb-6 bg-white w-16 h-16 rounded-2xl flex items-center justify-center group-hover:bg-saafe-green group-hover:text-white transition-colors duration-300">
+                <div className="mb-6 bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center group-hover:bg-saafe-green group-hover:text-white transition-colors duration-300">
                   {benefit.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-saafe-blue">{benefit.title}</h3>
-                <p className="text-gray-500 leading-relaxed">{benefit.description}</p>
+                <h3 className="text-xl font-black mb-4 text-white">{benefit.title}</h3>
+                <p className="text-white/60 leading-relaxed">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -215,11 +215,11 @@ export default function Products() {
       </section>
 
       {/* SECTION 5 — CTA */}
-      <section className="py-24 bg-saafe-blue relative overflow-hidden">
+      <section className="py-24 bg-black relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-saafe-green/10 skew-x-12 translate-x-1/4" />
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-black text-white mb-8"
@@ -234,7 +234,7 @@ export default function Products() {
               href="https://wa.me/5561999638967" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="bg-white text-saafe-blue px-10 py-4 rounded-full font-bold text-lg hover:bg-saafe-gray transition-all flex items-center justify-center gap-2"
+              className="bg-white text-saafe-blue px-10 py-4 rounded-full font-black text-lg hover:bg-saafe-gray transition-all flex items-center justify-center gap-2"
             >
               Falar no WhatsApp
             </a>

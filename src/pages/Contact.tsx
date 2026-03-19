@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Phone, Mail, Instagram, Globe, Send, MessageCircle, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Phone, Mail, Instagram, Globe, Send, MessageCircle, Youtube, Music } from 'lucide-react';
 import React, { useState } from 'react';
 
 export default function Contact() {
@@ -42,63 +42,97 @@ export default function Contact() {
       <div className="py-24 max-w-7xl mx-auto px-6">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Contact Info */}
+          {/* Social Hub */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            className="space-y-8"
           >
-            <div className="space-y-10">
-              <div className="flex items-start gap-6">
-                <div className="w-14 h-14 bg-saafe-gray rounded-2xl flex items-center justify-center text-saafe-green shrink-0">
-                  <Phone size={28} />
+            <div className="space-y-4">
+              <h2 className="text-3xl font-black text-saafe-blue uppercase tracking-tighter">Nossas Redes</h2>
+              <p className="text-gray-500 text-lg">Acompanhe nossas obras, tecnologias e novidades em tempo real através das nossas redes sociais.</p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* WhatsApp */}
+              <a 
+                href="https://wa.me/5561999638967" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative flex items-center gap-4 p-6 bg-[#25D366] text-white rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform">
+                  <MessageCircle size={28} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-saafe-blue mb-1">WhatsApp</h3>
-                  <p className="text-gray-500 mb-2">(61) 99963-8967</p>
-                  <a href="https://wa.me/5561999638967" className="text-saafe-green font-bold hover:underline flex items-center gap-1">
-                    Iniciar conversa <MessageCircle size={16} />
-                  </a>
+                  <span className="block text-xs font-bold uppercase tracking-widest opacity-80">WhatsApp</span>
+                  <span className="text-lg font-black">(61) 99963-8967</span>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-start gap-6">
-                <div className="w-14 h-14 bg-saafe-gray rounded-2xl flex items-center justify-center text-saafe-green shrink-0">
-                  <Mail size={28} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-saafe-blue mb-1">E-mail</h3>
-                  <p className="text-gray-500">contato@saafe.com.br</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-6">
-                <div className="w-14 h-14 bg-saafe-gray rounded-2xl flex items-center justify-center text-saafe-green shrink-0">
+              {/* Instagram */}
+              <a 
+                href="https://instagram.com/saafe_concreto_armado_thermo" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative flex items-center gap-4 p-6 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform">
                   <Instagram size={28} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-saafe-blue mb-1">Instagram</h3>
-                  <p className="text-gray-500 mb-2">@saafe_concreto_armado_thermo</p>
-                  <a href="https://instagram.com/saafe_concreto_armado_thermo" target="_blank" rel="noopener noreferrer" className="text-saafe-green font-bold hover:underline">
-                    Seguir perfil
-                  </a>
+                  <span className="block text-xs font-bold uppercase tracking-widest opacity-80">Instagram</span>
+                  <span className="text-lg font-black">@saafe_concreto</span>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-start gap-6">
-                <div className="w-14 h-14 bg-saafe-gray rounded-2xl flex items-center justify-center text-saafe-green shrink-0">
-                  <Globe size={28} />
+              {/* YouTube */}
+              <a 
+                href="https://youtube.com/@SaafeBrasilia" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative flex items-center gap-4 p-6 bg-[#FF0000] text-white rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform">
+                  <Youtube size={28} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-saafe-blue mb-1">Website</h3>
-                  <p className="text-gray-500">saafe.com.br</p>
+                  <span className="block text-xs font-bold uppercase tracking-widest opacity-80">YouTube</span>
+                  <span className="text-lg font-black">@SaafeBrasilia</span>
                 </div>
-              </div>
+              </a>
+
+              {/* TikTok */}
+              <a 
+                href="https://tiktok.com/@saafeoficial" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative flex items-center gap-4 p-6 bg-[#000000] text-white rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform">
+                  <Music size={28} />
+                </div>
+                <div>
+                  <span className="block text-xs font-bold uppercase tracking-widest opacity-80">TikTok</span>
+                  <span className="text-lg font-black">@saafeoficial</span>
+                </div>
+              </a>
             </div>
 
-            <div className="mt-16 p-10 bg-saafe-blue rounded-3xl text-white">
-              <h3 className="text-2xl font-black mb-4">SEJA SAAFE VOCÊ TAMBÉM</h3>
-              <p className="text-white/60">Tecnologia, eficiência e inovação na construção civil.</p>
+            <div className="p-8 bg-saafe-gray rounded-[2rem] border border-gray-100">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-saafe-green/10 text-saafe-green rounded-xl flex items-center justify-center">
+                  <Globe size={24} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-saafe-blue">Website Oficial</h4>
+                  <p className="text-sm text-gray-500">www.saafe.com.br</p>
+                </div>
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                Tecnologia, eficiência e inovação na construção civil. Conheça mais sobre o sistema construtivo em EPS.
+              </p>
             </div>
           </motion.div>
 
