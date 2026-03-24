@@ -24,7 +24,7 @@ export default function WhatsAppButton() {
         className="relative bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center group"
       >
         <MessageCircle size={32} />
-        <span className="absolute right-full mr-4 bg-white text-saafe-dark px-4 py-2 rounded-lg text-sm font-bold shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+        <span className="absolute right-full mr-4 bg-white text-saafe-black px-4 py-2 rounded-lg text-sm font-bold shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
           Fale conosco no WhatsApp
         </span>
       </motion.a>

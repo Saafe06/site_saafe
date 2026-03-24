@@ -95,7 +95,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-5xl md:text-8xl font-black mb-6 leading-tight tracking-tighter"
+            className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tighter"
           >
             Construção Inteligente com <span className="text-saafe-green">Tecnologia EPS</span>
           </motion.h1>
@@ -103,7 +103,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="text-lg md:text-2xl mb-10 text-white/80 max-w-3xl mx-auto font-medium"
+            className="text-base md:text-xl mb-10 text-white/90 max-w-2xl mx-auto font-light"
           >
             Soluções completas em construção com sistema monolítico em EPS: execução de obras, fornecimento de placas estruturais e capacitação profissional.
           </motion.p>
@@ -113,7 +113,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
             className="flex flex-col md:flex-row gap-4 justify-center"
           >
-            <Link to="/produtos" className="btn-primary group flex items-center justify-center gap-2 px-10 py-4 text-lg">
+            <Link to="/produtos" className="btn-primary group flex items-center justify-center gap-2 px-10 py-4 text-lg rounded-lg">
               Conheça o Sistema 
               <motion.span
                 animate={{ x: [0, 5, 0] }}
@@ -122,7 +122,7 @@ export default function Home() {
                 <ArrowRight size={20} />
               </motion.span>
             </Link>
-            <a href="https://wa.me/5561999638967" target="_blank" rel="noopener noreferrer" className="btn-secondary flex items-center justify-center gap-2 px-10 py-4 text-lg hover:bg-white hover:text-saafe-blue transition-all duration-300">
+            <a href="https://wa.me/5561999638967" target="_blank" rel="noopener noreferrer" className="btn-secondary flex items-center justify-center gap-2 px-10 py-4 text-lg rounded-lg hover:bg-saafe-green transition-all duration-300">
               Fale conosco no WhatsApp
             </a>
           </motion.div>
@@ -144,7 +144,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section ref={aboutRef} className="py-32 bg-white relative">
+      <section ref={aboutRef} className="py-20 bg-white relative">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, x: -100 }}
@@ -153,8 +153,8 @@ export default function Home() {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <span className="text-saafe-green font-bold tracking-[0.3em] uppercase text-xs mb-6 block">Sobre a Empresa</span>
-            <h2 className="text-4xl md:text-6xl font-black mb-10 text-saafe-blue leading-none">O que é a SAAFE</h2>
-            <div className="space-y-8 text-gray-600 leading-relaxed text-xl">
+            <h2 className="text-4xl md:text-5xl font-bold mb-10 text-saafe-petroleum leading-none">O que é a SAAFE</h2>
+            <div className="space-y-8 text-gray-600 leading-relaxed text-lg font-light">
               <p>
                 A SAAFE atua há mais de 8 anos na construção civil, especializada no sistema construtivo monolítico com painéis de EPS.
               </p>
@@ -176,10 +176,10 @@ export default function Home() {
                   transition={{ delay: 0.5 + i * 0.1 }}
                   className="flex items-center gap-4 group cursor-default"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-saafe-gray flex items-center justify-center text-saafe-green font-black text-lg group-hover:bg-saafe-green group-hover:text-white transition-all duration-300">
+                  <div className="w-14 h-14 rounded-lg border-2 border-saafe-light-blue flex items-center justify-center text-saafe-petroleum font-bold text-lg group-hover:bg-saafe-light-blue group-hover:text-white transition-all duration-300">
                     {state}
                   </div>
-                  <span className="font-bold text-saafe-blue text-lg">
+                  <span className="font-bold text-saafe-petroleum text-lg">
                     {state === "MG" ? "Minas Gerais" : state === "SP" ? "São Paulo" : "Distrito Federal"}
                   </span>
                 </motion.div>
@@ -194,7 +194,7 @@ export default function Home() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="relative"
           >
-            <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)]">
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
               <motion.img 
                 style={{ y: aboutImageY }}
                 whileHover={{ scale: 1.1 }}
@@ -208,10 +208,10 @@ export default function Home() {
             <motion.div 
               animate={{ y: [0, -20, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute -bottom-10 -right-10 w-40 h-40 bg-saafe-green rounded-full flex items-center justify-center text-white shadow-2xl z-20"
+              className="absolute -bottom-10 -right-10 w-40 h-40 bg-saafe-green rounded-2xl flex items-center justify-center text-white shadow-[0_8px_24px_rgba(0,81,103,0.18)] z-20"
             >
               <div className="text-center">
-                <span className="text-4xl font-black block">8+</span>
+                <span className="text-4xl font-bold block">8+</span>
                 <span className="text-[10px] font-bold uppercase tracking-widest opacity-80">Anos de Exp.</span>
               </div>
             </motion.div>
@@ -220,13 +220,13 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-32 bg-saafe-gray border-y border-gray-200 relative overflow-hidden">
+      <section className="py-20 bg-saafe-gray border-y border-gray-100 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:40px_40px]" />
         </div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-24">
+          <div className="text-center mb-20">
             <motion.span 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -240,7 +240,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-black text-saafe-blue"
+              className="text-4xl md:text-5xl font-bold text-saafe-petroleum"
             >
               Experiência que gera resultados
             </motion.h2>
@@ -259,13 +259,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                whileHover={{ y: -15, scale: 1.02 }}
-                className="bg-white p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-white flex flex-col items-center text-center group transition-all duration-500"
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="bg-white p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,81,103,0.10)] border-t-[3px] border-saafe-green flex flex-col items-center text-center group transition-all duration-500"
               >
-                <div className="w-20 h-20 bg-saafe-gray rounded-3xl flex items-center justify-center text-saafe-green mb-8 group-hover:bg-saafe-green group-hover:text-white group-hover:rotate-[10deg] transition-all duration-500">
+                <div className="w-20 h-20 bg-saafe-gray rounded-2xl flex items-center justify-center text-saafe-green mb-8 group-hover:bg-saafe-green group-hover:text-white transition-all duration-500">
                   {stat.icon}
                 </div>
-                <div className="text-6xl font-black text-saafe-blue mb-4 tracking-tighter">
+                <div className="text-6xl font-bold text-saafe-petroleum mb-4 tracking-tighter">
                   <Counter value={stat.value} suffix={stat.suffix} />
                 </div>
                 <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px] leading-relaxed">{stat.label}</p>
@@ -276,40 +276,42 @@ export default function Home() {
       </section>
 
       {/* Video Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-black text-saafe-blue mb-12"
-          >
-            Conheça o Sistema Monolítico em EPS
-          </motion.h2>
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative w-full max-w-[800px] mx-auto aspect-video rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white"
-          >
-            <iframe 
-              className="absolute top-0 left-0 w-full h-full"
-              src="https://www.youtube.com/embed/2XzaOuTYYJc?si=2QYbqNOCmdM3tyI8" 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerPolicy="strict-origin-when-cross-origin" 
-              allowFullScreen
-            ></iframe>
-          </motion.div>
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="bg-saafe-petroleum p-12 md:p-20 rounded-2xl shadow-2xl text-center">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-bold text-white mb-12"
+            >
+              Conheça o Sistema Monolítico em EPS
+            </motion.h2>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative w-full max-w-[800px] mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl border-4 border-white/10"
+            >
+              <iframe 
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/2XzaOuTYYJc?si=2QYbqNOCmdM3tyI8" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+              ></iframe>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Differentials Section */}
-      <section className="py-32 bg-saafe-gray">
+      <section className="py-20 bg-saafe-gray">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-24">
+          <div className="text-center mb-20">
             <motion.span 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -323,7 +325,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-black text-saafe-blue"
+              className="text-4xl md:text-5xl font-bold text-saafe-petroleum"
             >
               Diferenciais do Sistema
             </motion.h2>
@@ -337,14 +339,16 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -10, boxShadow: "0 30px 60px -12px rgba(0,0,0,0.1)" }}
-                className="bg-white p-12 rounded-[3rem] transition-all duration-500 border border-transparent hover:border-saafe-green/20 group"
+                whileHover={{ y: -10 }}
+                className="bg-white p-12 rounded-2xl transition-all duration-500 border-2 border-transparent hover:border-saafe-green shadow-[0_4px_20px_rgba(0,81,103,0.10)] group"
               >
-                <div className="mb-8 bg-white w-20 h-20 rounded-3xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-500">
-                  {item.icon}
+                <div className="mb-8 bg-saafe-gray w-20 h-20 rounded-2xl flex items-center justify-center group-hover:bg-saafe-green group-hover:text-white transition-all duration-500">
+                  <div className="text-saafe-petroleum group-hover:text-white transition-colors duration-500">
+                    {item.icon}
+                  </div>
                 </div>
-                <h3 className="text-2xl font-black mb-5 text-saafe-blue leading-tight">{item.title}</h3>
-                <p className="text-gray-500 leading-relaxed text-lg">{item.description}</p>
+                <h3 className="text-2xl font-bold mb-5 text-saafe-petroleum leading-tight">{item.title}</h3>
+                <p className="text-gray-500 leading-relaxed text-lg font-light">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -352,7 +356,7 @@ export default function Home() {
       </section>
 
       {/* How it Works Section */}
-      <section className="py-32 bg-saafe-blue relative overflow-hidden">
+      <section className="py-20 bg-saafe-petroleum relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-saafe-green rounded-full blur-[120px]" />
           <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-saafe-green rounded-full blur-[120px]" />
@@ -367,7 +371,7 @@ export default function Home() {
               transition={{ duration: 1 }}
               className="relative"
             >
-              <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl">
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.20)]">
                 <motion.img 
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 1 }}
@@ -377,7 +381,7 @@ export default function Home() {
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <div className="absolute -top-10 -left-10 w-40 h-40 border-4 border-saafe-green/30 rounded-[3rem] -z-10" />
+              <div className="absolute -top-10 -left-10 w-40 h-40 border-4 border-saafe-green/30 rounded-2xl -z-10" />
               <div className="absolute -bottom-10 -right-10 w-40 h-40 border-4 border-saafe-green/30 rounded-full -z-10" />
             </motion.div>
             
@@ -389,11 +393,11 @@ export default function Home() {
               className="text-white"
             >
               <span className="text-saafe-green font-bold tracking-[0.4em] uppercase text-xs mb-6 block">Tecnologia</span>
-              <h2 className="text-4xl md:text-6xl font-black mb-10 leading-none">Como funciona o sistema</h2>
-              <p className="text-white/70 text-xl leading-relaxed mb-10">
+              <h2 className="text-4xl md:text-5xl font-bold mb-10 leading-none">Como funciona o sistema</h2>
+              <p className="text-white/70 text-lg leading-relaxed mb-10 font-light">
                 O sistema construtivo monolítico em EPS utiliza painéis estruturais compostos por núcleo de poliestireno expandido envolvido por malhas metálicas estruturais.
               </p>
-              <p className="text-white/70 text-xl leading-relaxed mb-12">
+              <p className="text-white/70 text-lg leading-relaxed mb-12 font-light">
                 Após a montagem das paredes, é aplicado microconcreto estrutural sobre os painéis, formando uma estrutura monolítica de concreto armado extremamente resistente.
               </p>
               
@@ -412,8 +416,8 @@ export default function Home() {
                     transition={{ delay: 0.5 + i * 0.1 }}
                     className="flex items-center gap-4 group"
                   >
-                    <div className="w-3 h-3 rounded-full bg-saafe-green group-hover:scale-150 transition-transform duration-300" />
-                    <span className="font-black text-lg tracking-tight group-hover:text-saafe-green transition-colors duration-300">{item}</span>
+                    <div className="w-6 h-6 rounded-md bg-saafe-green flex items-center justify-center text-white text-xs">✓</div>
+                    <span className="font-bold text-lg tracking-tight group-hover:text-saafe-green transition-colors duration-300">{item}</span>
                   </motion.div>
                 ))}
               </div>
@@ -423,16 +427,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-40 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-5">
-           <img 
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop" 
-            alt="Background Pattern" 
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
-        </div>
-        
+      <section className="py-20 section-gradient relative overflow-hidden">
         <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -440,17 +435,17 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            <h2 className="text-5xl md:text-8xl font-black text-saafe-blue mb-10 leading-none tracking-tighter">
-              Construa com <span className="text-saafe-green underline decoration-4 underline-offset-8">tecnologia</span> e eficiência.
+            <h2 className="text-5xl md:text-7xl font-bold text-white mb-10 leading-none tracking-tighter">
+              Construa com <span className="text-saafe-yellow-green underline decoration-4 underline-offset-8">tecnologia</span> e eficiência.
             </h2>
-            <p className="text-gray-500 text-xl md:text-2xl mb-14 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-white/80 text-lg md:text-xl mb-14 max-w-2xl mx-auto leading-relaxed font-light">
               Entre em contato com a SAAFE e descubra como o sistema construtivo em EPS pode transformar sua obra.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link to="/contato" className="btn-primary px-12 py-5 text-xl shadow-[0_20px_40px_rgba(34,197,94,0.3)] hover:shadow-[0_25px_50px_rgba(34,197,94,0.4)] transition-all duration-500">
+              <Link to="/contato" className="px-12 py-5 bg-saafe-green text-white rounded-lg font-bold text-xl hover:bg-saafe-petroleum transition-all duration-500 shadow-lg">
                 Solicitar orçamento
               </Link>
-              <a href="https://wa.me/5561999638967" className="px-12 py-5 bg-saafe-blue text-white rounded-full font-black text-xl hover:bg-saafe-dark transition-all duration-500 shadow-[0_20px_40px_rgba(15,23,42,0.2)]">
+              <a href="https://wa.me/5561999638967" className="px-12 py-5 bg-saafe-yellow-green text-saafe-black rounded-lg font-bold text-xl hover:bg-saafe-green hover:text-white transition-all duration-500 shadow-lg">
                 Falar no WhatsApp
               </a>
             </div>

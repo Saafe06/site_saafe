@@ -32,7 +32,7 @@ export default function Products() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-black mb-6 leading-tight"
+            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
           >
             Sistema Construtivo <span className="text-saafe-green">SAAFE</span>
           </motion.h1>
@@ -40,7 +40,7 @@ export default function Products() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto font-medium"
+            className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto font-light"
           >
             Tecnologia monolítica em EPS para construções mais rápidas, eficientes e com alto desempenho térmico e acústico.
           </motion.p>
@@ -80,9 +80,9 @@ export default function Products() {
               transition={{ duration: 0.8 }}
             >
               <span className="text-saafe-green font-bold tracking-widest uppercase text-sm mb-4 block">Detalhes Técnicos</span>
-              <h2 className="text-4xl md:text-5xl font-black mb-8 text-saafe-blue">Composição da Placa Estrutural</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-saafe-petroleum">Composição da Placa Estrutural</h2>
               
-              <div className="space-y-6 text-gray-600 leading-relaxed text-lg mb-10">
+              <div className="space-y-6 text-gray-600 leading-relaxed text-lg mb-10 font-light">
                 <p>A placa estrutural do sistema SAAFE é composta por:</p>
                 <ul className="space-y-3">
                   {[
@@ -93,7 +93,7 @@ export default function Products() {
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <CheckCircle2 className="text-saafe-green" size={20} />
-                      <span className="font-medium text-saafe-blue">{item}</span>
+                      <span className="font-bold text-saafe-petroleum">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -102,8 +102,8 @@ export default function Products() {
                 </p>
               </div>
 
-              <div className="bg-saafe-blue/5 p-8 rounded-3xl border-l-4 border-saafe-green">
-                <h3 className="text-xl font-bold text-saafe-blue mb-4">Esta tecnologia proporciona:</h3>
+              <div className="bg-saafe-petroleum/5 p-8 rounded-2xl border-l-4 border-saafe-green">
+                <h3 className="text-xl font-bold text-saafe-petroleum mb-4">Esta tecnologia proporciona:</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
                     { icon: <ShieldCheck size={18} />, text: "Alta resistência estrutural" },
@@ -111,7 +111,7 @@ export default function Products() {
                     { icon: <Volume2 size={18} />, text: "Isolamento acústico superior" },
                     { icon: <Clock size={18} />, text: "Redução de tempo de obra" }
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 text-saafe-blue/80 text-sm font-bold">
+                    <div key={i} className="flex items-center gap-2 text-saafe-petroleum/80 text-sm font-bold">
                       <div className="text-saafe-green">{item.icon}</div>
                       {item.text}
                     </div>
@@ -124,41 +124,43 @@ export default function Products() {
       </section>
 
       {/* SECTION 3 — VÍDEO EXPLICANDO O SISTEMA */}
-      <section className="py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="text-saafe-green font-bold tracking-widest uppercase text-sm mb-4 block">Demonstração</span>
-            <h2 className="text-4xl md:text-5xl font-black mb-12 text-saafe-blue">Veja o sistema construtivo em funcionamento</h2>
-            
-            <div className="relative aspect-video rounded-[2.5rem] overflow-hidden shadow-2xl mb-10 border-8 border-white">
-              <iframe 
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/pw_zNGRV2Oc" 
-                title="Sistema Construtivo SAAFE" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen
-              ></iframe>
-            </div>
-            
-            <p className="text-gray-500 text-lg max-w-3xl mx-auto leading-relaxed">
-              Este vídeo mostra na prática como funciona o sistema construtivo com painéis EPS e como a estrutura monolítica é formada durante a obra.
-            </p>
-          </motion.div>
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="bg-saafe-petroleum p-12 md:p-20 rounded-2xl shadow-2xl text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="text-saafe-green font-bold tracking-widest uppercase text-sm mb-4 block">Demonstração</span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-12 text-white">Veja o sistema construtivo em funcionamento</h2>
+              
+              <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl mb-10 border-4 border-white/10">
+                <iframe 
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/pw_zNGRV2Oc" 
+                  title="Sistema Construtivo SAAFE" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                ></iframe>
+              </div>
+              
+              <p className="text-white/70 text-lg max-w-3xl mx-auto leading-relaxed font-light">
+                Este vídeo mostra na prática como funciona o sistema construtivo com painéis EPS e como a estrutura monolítica é formada durante a obra.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* SECTION 4 — BENEFÍCIOS DO SISTEMA */}
-      <section className="py-24 bg-saafe-gray">
+      <section className="py-20 bg-saafe-gray">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-saafe-green font-bold tracking-widest uppercase text-sm mb-4 block">Vantagens</span>
-            <h2 className="text-4xl md:text-5xl font-black text-saafe-blue">Benefícios do Sistema</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-saafe-petroleum">Benefícios do Sistema</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -201,13 +203,15 @@ export default function Products() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 whileHover={{ y: -10 }}
-                className="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all border border-gray-100 group"
+                className="bg-white p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,81,103,0.10)] transition-all border-2 border-transparent hover:border-saafe-green group"
               >
-                <div className="mb-6 bg-white w-16 h-16 rounded-2xl flex items-center justify-center group-hover:bg-saafe-green group-hover:text-white transition-colors duration-300">
-                  {benefit.icon}
+                <div className="mb-6 bg-saafe-gray w-16 h-16 rounded-2xl flex items-center justify-center group-hover:bg-saafe-green group-hover:text-white transition-colors duration-300">
+                  <div className="text-saafe-petroleum group-hover:text-white transition-colors duration-300">
+                    {benefit.icon}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-saafe-blue">{benefit.title}</h3>
-                <p className="text-gray-500 leading-relaxed">{benefit.description}</p>
+                <h3 className="text-xl font-bold mb-4 text-saafe-petroleum">{benefit.title}</h3>
+                <p className="text-gray-500 leading-relaxed font-light">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -215,26 +219,25 @@ export default function Products() {
       </section>
 
       {/* SECTION 5 — CTA */}
-      <section className="py-24 bg-saafe-blue relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-saafe-green/10 skew-x-12 translate-x-1/4" />
+      <section className="py-20 section-gradient relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black text-white mb-8"
+            className="text-4xl md:text-6xl font-bold text-white mb-8"
           >
             Quer construir com o sistema SAAFE?
           </motion.h2>
           <div className="flex flex-col md:flex-row gap-6 justify-center">
-            <Link to="/contato" className="btn-primary flex items-center justify-center gap-2 px-10 py-4 text-lg">
+            <Link to="/contato" className="px-10 py-4 bg-saafe-green text-white rounded-lg font-bold text-lg hover:bg-saafe-petroleum transition-all flex items-center justify-center gap-2 shadow-lg">
               Solicitar orçamento <ArrowRight size={20} />
             </Link>
             <a 
               href="https://wa.me/5561999638967" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="bg-white text-saafe-blue px-10 py-4 rounded-full font-bold text-lg hover:bg-saafe-gray transition-all flex items-center justify-center gap-2"
+              className="bg-saafe-yellow-green text-saafe-black px-10 py-4 rounded-lg font-bold text-lg hover:bg-saafe-green hover:text-white transition-all flex items-center justify-center gap-2 shadow-lg"
             >
               Falar no WhatsApp
             </a>

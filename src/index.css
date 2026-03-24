@@ -1,35 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Montserrat", "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
   
-  --color-saafe-green: #1F7A63;
-  --color-saafe-blue: #1B3A5D;
+  --color-saafe-green: #40AB35;
+  --color-saafe-yellow-green: #AFCB1F;
+  --color-saafe-light-blue: #36A9E1;
+  --color-saafe-petroleum: #005167;
+  --color-saafe-black: #1D1D1B;
   --color-saafe-gray: #F7FAFC;
-  --color-saafe-dark: #2D3748;
 }
 
 @layer base {
   body {
-    @apply font-sans text-saafe-dark bg-white;
+    @apply font-sans text-saafe-black bg-white font-light;
+    transition: all 0.2s ease;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-black tracking-tight;
+    @apply font-sans font-bold tracking-tight;
+  }
+
+  a, button {
+    @apply transition-all duration-200 ease-in-out;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply px-8 py-3 bg-saafe-green text-white rounded-full font-semibold transition-all hover:bg-saafe-green/90 hover:shadow-lg active:scale-95;
+    @apply px-8 py-3 bg-saafe-green text-white rounded-lg font-semibold transition-all hover:bg-saafe-green/90 hover:shadow-lg active:scale-95;
   }
   
   .btn-secondary {
-    @apply px-8 py-3 bg-saafe-blue text-white rounded-full font-semibold transition-all hover:bg-saafe-blue/90 hover:shadow-lg active:scale-95;
+    @apply px-8 py-3 bg-saafe-petroleum text-white rounded-lg font-semibold transition-all hover:bg-saafe-petroleum/90 hover:shadow-lg active:scale-95;
   }
 
   .btn-outline {
-    @apply px-8 py-3 border-2 border-saafe-green text-saafe-green rounded-full font-semibold transition-all hover:bg-saafe-green hover:text-white active:scale-95;
+    @apply px-8 py-3 border-2 border-saafe-green text-saafe-green rounded-lg font-semibold transition-all hover:bg-saafe-green hover:text-white active:scale-95;
   }
 
   .glass-card {
@@ -37,8 +45,6 @@
   }
 
   .section-gradient {
-    @apply bg-gradient-to-b from-saafe-blue to-black text-white;
+    @apply bg-gradient-to-br from-saafe-petroleum to-saafe-light-blue text-white;
   }
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');

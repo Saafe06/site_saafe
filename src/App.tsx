@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 import Products from './pages/Products';
-import Training from './pages/Training';
+import Assessoria from './pages/Assessoria';
 import Construction from './pages/Construction';
 import Contact from './pages/Contact';
 
@@ -19,7 +19,7 @@ function PageSetup() {
     const titles: { [key: string]: string } = {
       '/': 'SAAFE - Engenharia e Construção em EPS',
       '/produtos': 'SAAFE - Produtos',
-      '/treinamento': 'SAAFE - Treinamento',
+      '/assessoria': 'SAAFE - Assessoria Empresarial',
       '/construcao': 'SAAFE - Construção',
       '/contato': 'SAAFE - Contato',
     };
@@ -40,7 +40,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/produtos" element={<Products />} />
-            <Route path="/treinamento" element={<Training />} />
+            <Route path="/assessoria" element={<Assessoria />} />
             <Route path="/construcao" element={<Construction />} />
             <Route path="/contato" element={<Contact />} />
           </Routes>

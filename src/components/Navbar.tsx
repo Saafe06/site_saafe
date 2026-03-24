@@ -12,7 +12,7 @@ function cn(...inputs: ClassValue[]) {
 const navLinks = [
   { name: 'HOME', path: '/' },
   { name: 'PRODUTOS', path: '/produtos' },
-  { name: 'TREINAMENTO', path: '/treinamento' },
+  { name: 'ASSESSORIA EMPRESARIAL', path: '/assessoria' },
   { name: 'CONSTRUÇÃO', path: '/construcao' },
   { name: 'CONTATO', path: '/contato' },
 ];
@@ -27,7 +27,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 w-full z-50 transition-all duration-500 !bg-white/40 backdrop-blur-[15px] border-b border-white/20 shadow-sm"
+      className="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-white/80 backdrop-blur-[15px] border-b border-black/[0.08] shadow-sm"
     >
       <div className="max-w-5xl mx-auto px-6 flex justify-between items-center py-3">
         <Link to="/" className="flex items-center group">
@@ -36,7 +36,7 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
             src="https://lh3.googleusercontent.com/d/1Ubp0U_gBr0m0p0Ff8_NFSCYwRDukgxXW" 
             alt="SAAFE Logo" 
-            className="h-14 w-auto transition-all"
+            className="h-16 w-auto transition-all"
             referrerPolicy="no-referrer"
           />
         </Link>
@@ -48,11 +48,10 @@ export default function Navbar() {
               key={link.name}
               to={link.path}
               className={cn(
-                'text-[11px] font-bold tracking-widest transition-all duration-300 border-b-2',
-                'text-saafe-dark',
+                'text-[12px] font-medium tracking-widest transition-all duration-300',
                 location.pathname === link.path 
-                  ? 'border-saafe-green text-saafe-green font-black' 
-                  : 'border-transparent hover:text-saafe-green'
+                  ? 'text-saafe-green font-bold' 
+                  : 'text-saafe-black hover:text-saafe-green'
               )}
             >
               {link.name}
@@ -60,7 +59,7 @@ export default function Navbar() {
           ))}
           <Link 
             to="/contato" 
-            className="px-6 py-2 rounded-full text-[11px] font-bold tracking-widest transition-all bg-saafe-green text-white hover:bg-saafe-blue"
+            className="px-6 py-2 rounded-lg text-[12px] font-bold tracking-widest transition-all bg-saafe-green text-white hover:bg-saafe-petroleum"
           >
             ORÇAMENTO
           </Link>

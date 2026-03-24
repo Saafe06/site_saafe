@@ -32,7 +32,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-black mb-6 leading-tight"
+            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
           >
             Entre em contato com a <span className="text-saafe-green">SAAFE</span>
           </motion.h1>
@@ -50,8 +50,8 @@ export default function Contact() {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <h2 className="text-3xl font-black text-saafe-blue uppercase tracking-tighter">Nossas Redes</h2>
-              <p className="text-gray-500 text-lg">Acompanhe nossas obras, tecnologias e novidades em tempo real através das nossas redes sociais.</p>
+              <h2 className="text-3xl font-bold text-saafe-petroleum uppercase tracking-tighter">Nossas Redes</h2>
+              <p className="text-gray-500 text-lg font-light">Acompanhe nossas obras, tecnologias e novidades em tempo real através das nossas redes sociais.</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -67,7 +67,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="block text-xs font-bold uppercase tracking-widest opacity-80">WhatsApp</span>
-                  <span className="text-lg font-black">(61) 99963-8967</span>
+                  <span className="text-lg font-bold">(61) 99963-8967</span>
                 </div>
               </a>
 
@@ -83,7 +83,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="block text-xs font-bold uppercase tracking-widest opacity-80">Instagram</span>
-                  <span className="text-lg font-black">@saafe_concreto</span>
+                  <span className="text-lg font-bold">@saafe_concreto</span>
                 </div>
               </a>
 
@@ -99,7 +99,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="block text-xs font-bold uppercase tracking-widest opacity-80">YouTube</span>
-                  <span className="text-lg font-black">@SaafeBrasilia</span>
+                  <span className="text-lg font-bold">@SaafeBrasilia</span>
                 </div>
               </a>
 
@@ -115,22 +115,22 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="block text-xs font-bold uppercase tracking-widest opacity-80">TikTok</span>
-                  <span className="text-lg font-black">@saafeoficial</span>
+                  <span className="text-lg font-bold">@saafeoficial</span>
                 </div>
               </a>
             </div>
 
-            <div className="p-8 bg-saafe-gray rounded-[2rem] border border-gray-100">
+            <div className="p-8 bg-saafe-gray rounded-2xl border border-gray-100 shadow-sm">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-12 h-12 bg-saafe-green/10 text-saafe-green rounded-xl flex items-center justify-center">
                   <Globe size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-saafe-blue">Website Oficial</h4>
+                  <h4 className="font-bold text-saafe-petroleum">Website Oficial</h4>
                   <p className="text-sm text-gray-500">www.saafe.com.br</p>
                 </div>
               </div>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed font-light">
                 Tecnologia, eficiência e inovação na construção civil. Conheça mais sobre o sistema construtivo em EPS.
               </p>
             </div>
@@ -141,16 +141,16 @@ export default function Contact() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white p-8 md:p-12 rounded-[3rem] shadow-2xl border border-gray-100 flex flex-col justify-center"
+            className="bg-white p-8 md:p-12 rounded-2xl shadow-2xl border border-gray-100 flex flex-col justify-center"
           >
             <div className="text-center space-y-8">
-              <div className="w-20 h-20 bg-saafe-gray text-saafe-green rounded-full flex items-center justify-center mx-auto">
+              <div className="w-20 h-20 bg-saafe-gray text-saafe-green rounded-full flex items-center justify-center mx-auto shadow-sm">
                 <Mail size={40} />
               </div>
               
               <div className="space-y-4">
-                <h3 className="text-3xl font-black text-saafe-blue">Solicite seu Orçamento</h3>
-                <p className="text-gray-500 text-lg">
+                <h3 className="text-3xl font-bold text-saafe-petroleum">Solicite seu Orçamento</h3>
+                <p className="text-gray-500 text-lg font-light">
                   Clique no botão abaixo para nos enviar um e-mail com os detalhes do seu projeto. 
                   Nossa equipe técnica entrará em contato o mais breve possível.
                 </p>
@@ -159,7 +159,7 @@ export default function Contact() {
               <div className="space-y-4">
                 <a 
                   href={mailtoLink}
-                  className="btn-primary w-full flex items-center justify-center gap-3 py-6 text-xl shadow-lg shadow-saafe-green/20"
+                  className="w-full flex items-center justify-center gap-3 py-6 bg-saafe-green text-white rounded-lg font-bold text-xl shadow-lg hover:bg-saafe-petroleum transition-all"
                 >
                   SOLICITAR ORÇAMENTO VIA E-MAIL <Send size={24} />
                 </a>
@@ -170,7 +170,7 @@ export default function Contact() {
                   <div className="flex-grow border-t border-gray-200"></div>
                 </div>
                 
-                <a href="https://wa.me/5561999638967" className="btn-secondary w-full flex items-center justify-center gap-3 py-6 text-xl">
+                <a href="https://wa.me/5561999638967" className="w-full flex items-center justify-center gap-3 py-6 bg-saafe-petroleum text-white rounded-lg font-bold text-xl hover:bg-saafe-green transition-all shadow-lg">
                   FALAR NO WHATSAPP <MessageCircle size={24} />
                 </a>
               </div>

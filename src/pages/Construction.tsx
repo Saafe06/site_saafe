@@ -38,7 +38,7 @@ export default function Construction() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-black mb-6 leading-tight"
+            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
           >
             Construção de <span className="text-saafe-green">Alto Padrão</span>
           </motion.h1>
@@ -71,12 +71,12 @@ export default function Construction() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="p-8 bg-saafe-gray rounded-[2rem] hover:bg-white hover:shadow-xl transition-all duration-500 group border border-transparent hover:border-gray-100"
+                  className="p-8 bg-saafe-gray rounded-2xl hover:bg-white shadow-[0_4px_20px_rgba(0,81,103,0.05)] hover:shadow-xl transition-all duration-500 group border-2 border-transparent hover:border-saafe-green"
                 >
-                  <div className="text-saafe-green mb-6 bg-white w-12 h-12 rounded-xl flex items-center justify-center shadow-sm group-hover:bg-saafe-green group-hover:text-white transition-all duration-500">
+                  <div className="text-saafe-petroleum mb-6 bg-white w-12 h-12 rounded-xl flex items-center justify-center shadow-sm group-hover:bg-saafe-green group-hover:text-white transition-all duration-500">
                     {item.icon}
                   </div>
-                  <h3 className="font-bold text-saafe-blue mb-3 text-lg">{item.title}</h3>
+                  <h3 className="font-bold text-saafe-petroleum mb-3 text-lg">{item.title}</h3>
                   <p className="text-sm text-gray-500 font-light leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
@@ -90,25 +90,25 @@ export default function Construction() {
             transition={{ duration: 0.8 }}
             className="grid grid-cols-2 gap-6"
           >
-            <motion.img whileHover={{ scale: 1.05 }} src={gallery[0]} alt="Casa Moderna" className="rounded-[2rem] shadow-lg h-72 w-full object-cover" referrerPolicy="no-referrer" />
-            <motion.img whileHover={{ scale: 1.05 }} src={gallery[1]} alt="Interior Moderno" className="rounded-[2rem] shadow-lg h-72 w-full object-cover mt-12" referrerPolicy="no-referrer" />
-            <motion.img whileHover={{ scale: 1.05 }} src={gallery[2]} alt="Detalhe Obra" className="rounded-[2rem] shadow-lg h-72 w-full object-cover -mt-12" referrerPolicy="no-referrer" />
-            <motion.img whileHover={{ scale: 1.05 }} src={gallery[3]} alt="Finalização" className="rounded-[2rem] shadow-lg h-72 w-full object-cover" referrerPolicy="no-referrer" />
+            <motion.img whileHover={{ scale: 1.05 }} src={gallery[0]} alt="Casa Moderna" className="rounded-2xl shadow-lg h-72 w-full object-cover" referrerPolicy="no-referrer" />
+            <motion.img whileHover={{ scale: 1.05 }} src={gallery[1]} alt="Interior Moderno" className="rounded-2xl shadow-lg h-72 w-full object-cover mt-12" referrerPolicy="no-referrer" />
+            <motion.img whileHover={{ scale: 1.05 }} src={gallery[2]} alt="Detalhe Obra" className="rounded-2xl shadow-lg h-72 w-full object-cover -mt-12" referrerPolicy="no-referrer" />
+            <motion.img whileHover={{ scale: 1.05 }} src={gallery[3]} alt="Finalização" className="rounded-2xl shadow-lg h-72 w-full object-cover" referrerPolicy="no-referrer" />
           </motion.div>
         </div>
 
         {/* Gallery */}
         <section className="mb-32">
-          <h2 className="text-3xl font-black text-saafe-blue mb-12 text-center">Galeria de Projetos</h2>
+          <h2 className="text-3xl font-bold text-saafe-petroleum mb-12 text-center">Galeria de Projetos</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {gallery.map((img, i) => (
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.02 }}
-                className="relative group overflow-hidden rounded-3xl aspect-square"
+                className="relative group overflow-hidden rounded-2xl aspect-square"
               >
                 <img src={img} alt={`Projeto ${i}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerPolicy="no-referrer" />
-                <div className="absolute inset-0 bg-saafe-blue/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div className="absolute inset-0 bg-saafe-petroleum/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <span className="text-white font-bold tracking-widest uppercase text-xs">Ver Detalhes</span>
                 </div>
               </motion.div>
@@ -117,14 +117,14 @@ export default function Construction() {
         </section>
 
         {/* Area of Operation */}
-        <section className="bg-saafe-blue rounded-[3rem] p-12 md:p-20 text-white text-center overflow-hidden relative">
+        <section className="bg-saafe-petroleum rounded-2xl p-12 md:p-20 text-white text-center overflow-hidden relative shadow-2xl">
           <div className="absolute inset-0 opacity-10 pointer-events-none">
             <svg viewBox="0 0 1000 1000" className="w-full h-full fill-current">
               <path d="M300,200 Q500,100 700,200 T900,400 T700,600 T300,500 T100,300 Z" />
             </svg>
           </div>
           
-          <h2 className="text-4xl font-black mb-12 relative z-10">Área de Atuação</h2>
+          <h2 className="text-4xl font-bold mb-12 relative z-10">Área de Atuação</h2>
           <div className="flex flex-col md:flex-row justify-center gap-12 relative z-10">
             <div className="flex flex-col items-center gap-4">
               <div className="w-20 h-20 bg-saafe-green rounded-full flex items-center justify-center shadow-lg">
