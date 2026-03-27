@@ -234,7 +234,7 @@ export default function Products() {
               Solicitar orçamento <ArrowRight size={20} />
             </Link>
             <a 
-              href="https://wa.me/5561999638967" 
+              href="https://wa.me/5519999971625?text=gostaria%20de%20saber%20mais.." 
               target="_blank" 
               rel="noopener noreferrer" 
               className="bg-saafe-yellow-green text-saafe-black px-10 py-4 rounded-lg font-bold text-lg hover:bg-saafe-green hover:text-white transition-all flex items-center justify-center gap-2 shadow-lg"

@@ -71,7 +71,7 @@ export default function Assessoria() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <a href="https://wa.me/5561999638967" target="_blank" rel="noopener noreferrer" className="px-12 py-5 bg-saafe-green text-white rounded-lg font-bold text-lg group flex items-center gap-3 mx-auto w-fit hover:bg-saafe-petroleum transition-all shadow-lg">
+            <a href="https://wa.me/5519999971625?text=gostaria%20de%20saber%20mais.." target="_blank" rel="noopener noreferrer" className="px-12 py-5 bg-saafe-green text-white rounded-lg font-bold text-lg group flex items-center gap-3 mx-auto w-fit hover:bg-saafe-petroleum transition-all shadow-lg">
               Solicitar Informações
               <ArrowRight className="group-hover:translate-x-2 transition-transform" />
             </a>
@@ -451,7 +451,7 @@ export default function Assessoria() {
             className="flex flex-col items-center gap-8"
           >
             <a 
-              href="https://wa.me/5561999638967" 
+              href="https://wa.me/5519999971625?text=gostaria%20de%20saber%20mais.." 
               target="_blank" 
               rel="noopener noreferrer" 
               className="px-12 py-5 bg-saafe-green text-white rounded-lg font-bold text-xl flex items-center gap-3 group hover:bg-saafe-petroleum transition-all shadow-lg"

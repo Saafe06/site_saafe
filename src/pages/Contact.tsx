@@ -57,7 +57,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* WhatsApp */}
               <a 
-                href="https://wa.me/5561999638967" 
+                href="https://wa.me/5519999971625?text=gostaria%20de%20saber%20mais.." 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group relative flex items-center gap-4 p-6 bg-[#25D366] text-white rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
@@ -67,7 +67,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="block text-xs font-bold uppercase tracking-widest opacity-80">WhatsApp</span>
-                  <span className="text-lg font-bold">(61) 99963-8967</span>
+                  <span className="text-lg font-bold">(19) 99997-1625</span>
                 </div>
               </a>
 
@@ -170,7 +170,7 @@ export default function Contact() {
                   <div className="flex-grow border-t border-gray-200"></div>
                 </div>
                 
-                <a href="https://wa.me/5561999638967" className="w-full flex items-center justify-center gap-3 py-6 bg-saafe-petroleum text-white rounded-lg font-bold text-xl hover:bg-saafe-green transition-all shadow-lg">
+                <a href="https://wa.me/5519999971625?text=gostaria%20de%20saber%20mais.." className="w-full flex items-center justify-center gap-3 py-6 bg-saafe-petroleum text-white rounded-lg font-bold text-xl hover:bg-saafe-green transition-all shadow-lg">
                   FALAR NO WHATSAPP <MessageCircle size={24} />
                 </a>
               </div>

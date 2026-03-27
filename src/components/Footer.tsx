@@ -47,7 +47,9 @@ export default function Footer() {
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
               <Phone size={18} className="text-saafe-green shrink-0 mt-1" />
-              <span className="text-white/70 font-light">(61) 99963-8967</span>
+              <a href="https://wa.me/5519999971625?text=gostaria%20de%20saber%20mais.." target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-saafe-green transition-colors font-light">
+                (19) 99997-1625
+              </a>
             </li>
             <li className="flex items-start gap-3">
               <Mail size={18} className="text-saafe-green shrink-0 mt-1" />

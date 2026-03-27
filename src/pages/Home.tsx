@@ -122,7 +122,7 @@ export default function Home() {
                 <ArrowRight size={20} />
               </motion.span>
             </Link>
-            <a href="https://wa.me/5561999638967" target="_blank" rel="noopener noreferrer" className="btn-secondary flex items-center justify-center gap-2 px-10 py-4 text-lg rounded-lg hover:bg-saafe-green transition-all duration-300">
+            <a href="https://wa.me/5519999971625?text=gostaria%20de%20saber%20mais.." target="_blank" rel="noopener noreferrer" className="btn-secondary flex items-center justify-center gap-2 px-10 py-4 text-lg rounded-lg hover:bg-saafe-green transition-all duration-300">
               Fale conosco no WhatsApp
             </a>
           </motion.div>
@@ -445,7 +445,7 @@ export default function Home() {
               <Link to="/contato" className="px-12 py-5 bg-saafe-green text-white rounded-lg font-bold text-xl hover:bg-saafe-petroleum transition-all duration-500 shadow-lg">
                 Solicitar orçamento
               </Link>
-              <a href="https://wa.me/5561999638967" className="px-12 py-5 bg-saafe-yellow-green text-saafe-black rounded-lg font-bold text-xl hover:bg-saafe-green hover:text-white transition-all duration-500 shadow-lg">
+              <a href="https://wa.me/5519999971625?text=gostaria%20de%20saber%20mais.." className="px-12 py-5 bg-saafe-yellow-green text-saafe-black rounded-lg font-bold text-xl hover:bg-saafe-green hover:text-white transition-all duration-500 shadow-lg">
                 Falar no WhatsApp
               </a>
             </div>
