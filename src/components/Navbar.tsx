@@ -12,6 +12,7 @@ function cn(...inputs: ClassValue[]) {
 const navLinks = [
   { name: 'HOME', path: '/' },
   { name: 'PRODUTOS', path: '/produtos' },
+  { name: 'TREINAMENTO', path: '/treinamento' },
   { name: 'ASSESSORIA EMPRESARIAL', path: '/assessoria' },
   { name: 'CONSTRUÇÃO', path: '/construcao' },
   { name: 'CONTATO', path: '/contato' },

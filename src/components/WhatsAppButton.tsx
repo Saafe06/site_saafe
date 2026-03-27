@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { MessageCircle } from 'lucide-react';
 
 export default function WhatsAppButton() {
-  const whatsappUrl = "https://wa.me/5519999971625?text=gostaria%20de%20saber%20mais..";
+  const whatsappUrl = "https://wa.me/5519999971625?text=Olá%2C%20gostaria%20de%20mais%20informações.";
 
   return (
     <motion.div
